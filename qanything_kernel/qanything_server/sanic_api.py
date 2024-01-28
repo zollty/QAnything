@@ -77,8 +77,10 @@ app.config.REQUEST_MAX_SIZE = 400 * 1024 * 1024
 async def add_cors_headers(request, response):
     # response.headers["Access-Control-Allow-Origin"] = "http://10.234.10.144:5052"
     response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    # response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+    # response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "*"
     response.headers["Access-Control-Allow-Credentials"] = "true"  # 如果需要的话
 
 @app.middleware("request")
@@ -87,8 +89,10 @@ async def handle_options_request(request):
         headers = {
             # "Access-Control-Allow-Origin": "http://10.234.10.144:5052",
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+            # "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            # "Access-Control-Allow-Headers": "Content-Type, Authorization",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Credentials": "true"  # 如果需要的话
         }
         return sanic_response.text("", headers=headers)
