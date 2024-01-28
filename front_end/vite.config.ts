@@ -107,7 +107,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
-      outDir: `dist/fenghou`,
+      outDir: `dist/qanything`,
     },
 
     base: env.VITE_APP_WEB_PREFIX,
