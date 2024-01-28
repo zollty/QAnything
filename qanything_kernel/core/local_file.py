@@ -18,7 +18,7 @@ import os
 
 text_splitter = RecursiveCharacterTextSplitter(
     separators=["\n", ".", "。", "!", "！", "?", "？"],
-    chunk_size=800,
+    chunk_size=1800,
     length_function=num_tokens,
 )
 

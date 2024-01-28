@@ -34,7 +34,7 @@ class EmbeddingClient:
         self._response_wait_t = self.DEFAULT_MAX_RESP_WAIT_S if resp_wait_s is None else resp_wait_s
         self._tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
 
-    def get_embedding(self, sentences, max_length=512):
+    def get_embedding(self, sentences, max_length=1024):
         # Setting up client
     
         inputs_data = self._tokenizer(sentences, padding=True, truncation=True, max_length=max_length, return_tensors='np')

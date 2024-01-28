@@ -17,8 +17,8 @@ import concurrent.futures
 class YouDaoEmbeddings:
     model_name: str = "text-embedding-youdao-001"
     deployment: str = model_name  # to support Azure OpenAI Service custom deployment names
-    embedding_ctx_length: int = 416
-    chunk_size: int = 1000
+    embedding_ctx_length: int = 924
+    chunk_size: int = 1800
     """Maximum number of texts to embed in each batch"""
     max_retries: int = 6
     """Maximum number of retries to make when generating."""

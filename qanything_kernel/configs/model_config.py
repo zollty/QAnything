@@ -33,16 +33,16 @@ QUERY_PROMPT_TEMPLATE = """{question}"""
 CACHED_VS_NUM = 100
 
 # 文本分句长度
-SENTENCE_SIZE = 100
+SENTENCE_SIZE = 500
 
 # 匹配后单段上下文长度
-CHUNK_SIZE = 800
+CHUNK_SIZE = 1800
 
 # 传入LLM的历史记录长度
-LLM_HISTORY_LEN = 3
+LLM_HISTORY_LEN = 1
 
 # 知识库检索时返回的匹配内容条数
-VECTOR_SEARCH_TOP_K = 100
+VECTOR_SEARCH_TOP_K = 20
 
 # embedding检索的相似度阈值，归一化后的L2距离，设置越大，召回越多，设置越小，召回越少
 VECTOR_SEARCH_SCORE_THRESHOLD = 1.1
@@ -73,10 +73,10 @@ print("rerank_port:", rerank_port)
 print("embed_port:", embed_port)
 LOCAL_RERANK_SERVICE_URL = f"localhost:{rerank_port}"
 LOCAL_RERANK_MODEL_NAME = 'rerank'
-LOCAL_RERANK_MAX_LENGTH = 512
-LOCAL_RERANK_BATCH = 16
+LOCAL_RERANK_MAX_LENGTH = 1024
+LOCAL_RERANK_BATCH = 8
 
 LOCAL_EMBED_SERVICE_URL = f"localhost:{embed_port}"
 LOCAL_EMBED_MODEL_NAME = 'embed'
-LOCAL_EMBED_MAX_LENGTH = 512
-LOCAL_EMBED_BATCH = 16
+LOCAL_EMBED_MAX_LENGTH = 1024
+LOCAL_EMBED_BATCH = 8

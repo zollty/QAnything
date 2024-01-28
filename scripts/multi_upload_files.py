@@ -28,7 +28,7 @@ print(len(files))
 response_times = []
 
 # 设置超时时间
-timeout = aiohttp.ClientTimeout(total=300)
+timeout = aiohttp.ClientTimeout(total=180)
 
 
 async def send_request(round_, files):

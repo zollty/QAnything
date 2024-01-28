@@ -12,7 +12,7 @@ load_dotenv()
 class OpenAILLM(BaseAnswer, ABC):
     model: str = "gpt-3.5-turbo"
     token_window: int = 4096
-    max_token: int = 512
+    max_token: int = 1024
     offcut_token: int = 50
     truncate_len: int = 50
     temperature: float = 0

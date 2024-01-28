@@ -48,7 +48,7 @@ class QwenTritonModel(object):
         self.model_url = model_url
         self.model_name = "base"
         self.seq_length = 4096
-        self.max_new_tokens = 300
+        self.max_new_tokens = 2048
 
     def _fill_input(self, name: str, data: np.ndarray) -> grpcclient.InferInput:
         infer_input = grpcclient.InferInput(name, data.shape, np_to_triton_dtype(data.dtype))
