@@ -84,7 +84,7 @@ const { knowledgeBaseList } = storeToRefs(useKnowledgeBase());
 
   .add-btn {
     margin: 12px 24px 20px 14px;
-    width: calc(100% - 38px);
+    width: calc(100% - 28px);
 
     :deep(.ant-input-affix-wrapper) {
       padding: 4px;
