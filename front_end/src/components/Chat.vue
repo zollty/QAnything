@@ -396,7 +396,7 @@ scrollBottom();
 
 <style lang="scss" scoped>
 .container {
-  padding-top: 16px;
+  padding-top: 6px;
   background-color: #26293b;
 }
 .my-page {

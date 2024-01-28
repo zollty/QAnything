@@ -83,8 +83,8 @@ const { knowledgeBaseList } = storeToRefs(useKnowledgeBase());
   background-color: $baseColor;
 
   .add-btn {
-    margin: 28px 24px 20px 24px;
-    width: calc(100% - 48px);
+    margin: 12px 24px 20px 14px;
+    width: calc(100% - 38px);
 
     :deep(.ant-input-affix-wrapper) {
       padding: 4px;

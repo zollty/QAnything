@@ -76,7 +76,7 @@ const props = defineProps({
     type: Object,
     default: () => {
       return {
-        width: '232px',
+        width: '244px',
       };
     },
   },

@@ -18,9 +18,9 @@
     <ul>
       <!-- <li @click="goDetail('https://ai.youdao.com/qanything.s')">
         <img src="../assets/home/icon-home.png" alt="首页" /><span>首页</span>
-      </li>
-      <li><img src="../assets/home/icon-document.png" alt="开发文档" /><span>开发文档</span></li> -->
-      <li>
+      </li> -->
+      <li><img src="../assets/home/icon-document.png" alt="开发文档" /><span>开发文档</span></li>
+      <!-- <li>
         <a-popover placement="bottomRight" overlay-class-name="cooperate">
           <template #content>
             <p>Aldoud_Business@corp.youdao.com</p>
@@ -32,7 +32,7 @@
             <img src="../assets/home/icon-email.png" alt="合作咨询" /><span>合作咨询</span>
           </div>
         </a-popover>
-      </li>
+      </li> -->
     </ul>
     <div class="user">
       <img src="../assets/home/avatar.png" alt="头像" />
@@ -58,9 +58,9 @@ const goDetail = (url: string) => {
   background: #26293b;
 
   .logo {
-    width: 146px;
-    height: 28px;
-    margin-left: 32px;
+    // width: 146px;
+    height: 52px;
+    margin-left: 14px;
     cursor: pointer;
 
     img {
