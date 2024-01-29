@@ -54,9 +54,9 @@ export const useKnowledgeBase = defineStore('knowledgeBase', () => {
   //获取知识库列表
   const getList = async () => {
     try {
-      console.log("-----------------------------------------------do urlResquest.kbList...........");
+      console.log("---------------------------do urlResquest.kbList-----------------");
       const res: any = await urlResquest.kbList();
-      console.log("-----------------------------------------------done!!!! urlResquest.kbList...........");
+      console.log("---------------------------done!!!! urlResquest.kbList-------------------------");
       if (+res.code === 200) {
         setKnowledgeBaseList(res.data);
         if (res?.data?.length > 0) {
