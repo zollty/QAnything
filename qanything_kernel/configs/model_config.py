@@ -33,16 +33,16 @@ QUERY_PROMPT_TEMPLATE = """{question}"""
 CACHED_VS_NUM = 100
 
 # 文本分句长度
-SENTENCE_SIZE = 500
+SENTENCE_SIZE = 250
 
 # 匹配后单段上下文长度
-CHUNK_SIZE = 1800
+CHUNK_SIZE = 1000
 
 # 传入LLM的历史记录长度
 LLM_HISTORY_LEN = 1
 
 # 知识库检索时返回的匹配内容条数
-VECTOR_SEARCH_TOP_K = 20
+VECTOR_SEARCH_TOP_K = 100
 
 # embedding检索的相似度阈值，归一化后的L2距离，设置越大，召回越多，设置越小，召回越少
 VECTOR_SEARCH_SCORE_THRESHOLD = 1.1
