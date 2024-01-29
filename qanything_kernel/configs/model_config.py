@@ -33,10 +33,10 @@ QUERY_PROMPT_TEMPLATE = """{question}"""
 CACHED_VS_NUM = 100
 
 # 文本分句长度
-SENTENCE_SIZE = 250
+SENTENCE_SIZE = 100
 
 # 匹配后单段上下文长度
-CHUNK_SIZE = 1000
+CHUNK_SIZE = 800
 
 # 传入LLM的历史记录长度
 LLM_HISTORY_LEN = 1

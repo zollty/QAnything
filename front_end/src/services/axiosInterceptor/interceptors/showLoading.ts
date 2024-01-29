@@ -3,9 +3,7 @@ import { message } from 'ant-design-vue';
 const loadingHandle = {
   ids: {} as any,
   addLoading(config: any) {
-    console.log('------------------------------------------');
-    const err = new Error();
-    console.log(err.stack);
+    console.log('------------------addLoading------------------------');
     config.hideLoading = message.loading({ content: 'loading', duration: 0 });
   },
   addId(config: any) {
