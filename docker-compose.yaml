@@ -104,7 +104,7 @@ services:
       - GPUID2=${GPUID2:-3}
       - HTTP_PROXY= # http://192.168.33.104:7890
       - HTTPS_PROXY= # http://192.168.33.104:7890
-      - NO_PROXY=localhost,127.0.0.1,0.0.0.0,.example.com
+      - NO_PROXY=localhost,127.0.0.1,0.0.0.0,milvus-standalone-local,mysql-container-local,.example.com
     depends_on:
       - 'standalone'
       - 'mysql'
