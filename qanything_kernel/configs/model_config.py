@@ -59,11 +59,11 @@ VECTOR_SEARCH_SCORE_THRESHOLD = 1.1
 ZH_TITLE_ENHANCE = False
 
 # MILVUS向量数据库地址
-MILVUS_HOST_LOCAL = 'milvus-standalone-local'
+MILVUS_HOST_LOCAL = '192.168.33.104'
 MILVUS_HOST_ONLINE = 'milvus-standalone-local'
 MILVUS_PORT = 19530
 
-MYSQL_HOST_LOCAL = 'mysql-container-local'
+MYSQL_HOST_LOCAL = '192.168.33.104'
 MYSQL_HOST_ONLINE = 'mysql-container-local'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
