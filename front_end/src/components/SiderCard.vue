@@ -213,7 +213,7 @@ const close = (item: IKnowledgeItem) => {
       :deep(.ant-input) {
         color: #999999;
         background: #1e212f;
-        border-color: #7261e9;
+        border-color: #4d71ff; // #7261e9;
       }
     }
   }
@@ -228,7 +228,7 @@ const close = (item: IKnowledgeItem) => {
   }
 }
 .active {
-  background: #7261e9;
+  background: #4d71ff; //  #7261e9
 }
 
 .fade-enter-active {
