@@ -4,8 +4,8 @@ const loadingHandle = {
   ids: {} as any,
   addLoading(config: any) {
     console.log('------------------------------------------');
-    let stack = (new Error()).stack;
-    console.log(stack);
+    const err = new Error();
+    console.log(err.stack);
     config.hideLoading = message.loading({ content: 'loading', duration: 0 });
   },
   addId(config: any) {
