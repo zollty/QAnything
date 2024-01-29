@@ -136,7 +136,7 @@ import { userId } from '@/services/urlConfig';
 const typewriter = new Typewriter((str: string) => {
   if (str) {
     QA_List.value[QA_List.value.length - 1].answer += str || '';
-    console.log("-------" + str)
+    console.log("-------" + str);
   }
 });
 
