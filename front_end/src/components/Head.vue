@@ -60,7 +60,7 @@ const goDetail = (url: string) => {
   .logo {
     // width: 146px;
     height: 52px;
-    margin-left: 14px;
+    margin-left: 26px;
     cursor: pointer;
 
     img {

@@ -73,10 +73,10 @@ print("rerank_port:", rerank_port)
 print("embed_port:", embed_port)
 LOCAL_RERANK_SERVICE_URL = f"localhost:{rerank_port}"
 LOCAL_RERANK_MODEL_NAME = 'rerank'
-LOCAL_RERANK_MAX_LENGTH = 1024
+LOCAL_RERANK_MAX_LENGTH = 768
 LOCAL_RERANK_BATCH = 8
 
 LOCAL_EMBED_SERVICE_URL = f"localhost:{embed_port}"
 LOCAL_EMBED_MODEL_NAME = 'embed'
-LOCAL_EMBED_MAX_LENGTH = 1024
+LOCAL_EMBED_MAX_LENGTH = 768
 LOCAL_EMBED_BATCH = 8
