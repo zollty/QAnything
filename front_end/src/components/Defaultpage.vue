@@ -1,7 +1,7 @@
 <template>
   <div class="default">
     <div class="box">
-      <p class="title"><span>QAnything</span> <span class="color">知识库问答</span></p>
+      <p class="title"><span>Fenghou</span> <span class="color">知识库问答</span></p>
       <p class="desc">构建文档知识库，高效检索文档信息，准确回答专业问题</p>
       <UploadDom :accept-list="acceptList" @update="update" />
     </div>
