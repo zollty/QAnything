@@ -35,9 +35,12 @@ if args.mode not in ['local', 'online']:
     raise ValueError('mode must be local or online')
 
 app = Sanic("QAnything")
-# 设置请求体最大为 10MB
+# 设置请求体最大为 400MB
 app.config.REQUEST_MAX_SIZE = 400 * 1024 * 1024
 
+
+# 将 /static 路径映射到 static 文件夹
+app.static('/static', './static')
 
 # CORS中间件，用于在每个响应中添加必要的头信息
 @app.middleware("response")

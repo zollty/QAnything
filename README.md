@@ -59,7 +59,7 @@
 
 With `QAnything`, you can simply drop any locally stored file of any format and receive accurate, fast, and reliable answers.
 
-Currently supported formats include: **PDF, Word (doc/docx), PPT, Markdown, Eml, TXT, Images (jpg, png, etc.), Web links** and more formats coming soon…
+Currently supported formats include: **PDF(pdf)**,**Word(docx)**,**PPT(pptx)**,**XLS(xlsx)**,**Markdown(md)**,**Email(eml)**,**TXT(txt)**,**Image(jpg，jpeg，png)**,**CSV(csv)**,**Web links(html)** and more formats coming soon…
 
 
 ### Key features
@@ -148,6 +148,7 @@ If you need to use it for commercial purposes, please follow the license of Qwen
 |      | CUDA Version             | >= 12.0                   |                                                                                               |
 |      |  Docker version           | >= 20.10.5                |  [Docker install](https://docs.docker.com/engine/install/) |
 |      | docker compose  version  | >= 2.23.3                 | [docker compose install](https://docs.docker.com/compose/install/)  |
+|      | git-lfs   |                  | [git-lfs install](https://git-lfs.com/)  |
 
 #### **For Winodws 11 with WSL 2**
 |**System**| **Required item**        | **Minimum Requirement**   | **Note**                                                                           |
@@ -155,6 +156,7 @@ If you need to use it for commercial purposes, please follow the license of Qwen
 |Windows 11 with WSL 2| Single NVIDIA GPU Memory <br> or Double NVIDIA GPU Memory | >= 16GB  <br>  >= 11GB + 5G                | NVIDIA 3090 <br> NVIDIA 2080TI × 2                                                                      |                                                                |
 |      | GEFORCE EXPERIENCE    | >= 546.33 |[GEFORCE EXPERIENCE download](https://us.download.nvidia.com/GFE/GFEClient/3.27.0.120/GeForce_Experience_v3.27.0.120.exe)             |                                                                                               |
 |      |  Docker Desktop           | >=  4.26.1（131620）     | [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)     |
+|      | git-lfs   |                  | [git-lfs install](https://git-lfs.com/)  |
 
 
 ### Installation
@@ -172,6 +174,17 @@ If you are in the Windows11 system: Need to enter the **WSL** environment.
 cd QAnything
 bash run.sh  # Start on GPU 0 by default.
 ```
+
+<details>
+<summary>(Note) If automatic download fails, you can manually download the model from one of the three addresses below.</summary>
+
+modelscope: https://modelscope.cn/models/netease-youdao/QAnything
+
+wisemodel: https://wisemodel.cn/models/Netease_Youdao/qanything
+
+huggingfase: https://huggingface.co/netease-youdao/QAnything
+
+</details>
 
 <details>
 <summary>(Optional) Specify GPU startup</summary>
@@ -201,6 +214,29 @@ After successful installation, you can experience the application by entering th
 If you want to visit API, please refer to the following address:
 - API address: http://`your_host`:8777/api/
 - For detailed API documentation, please refer to [QAnything API documentation](docs/API.md)
+
+#### DEBUG
+If you want to view the relevant logs, please check the log files in the `QAnything/logs/debug_logs` directory.
+- **debug.log**
+  - User request processing log
+- **sanic_api.log**
+  - Backend service running log
+- **llm_embed_rerank_tritonserver.log**(Single card deployment)
+  - LLM embedding and rerank tritonserver service startup log
+- **llm_tritonserver.log**(Multi-card deployment)
+  - LLM tritonserver service startup log
+- **embed_rerank_tritonserver.log**(Multi-card deployment or use of the OpenAI interface.)
+  - Embedding and rerank tritonserver service startup log
+- rerank_server.log
+  - Rerank service running log
+- ocr_server.log
+  - OCR service running log
+- npm_server.log
+  - Front-end service running log 
+- llm_server_entrypoint.log
+  - LLM intermediate server running log
+- fastchat_logs/*.log
+  - FastChat service running log
 
 ### Close service
 If you are in the Windows11 system: Need to enter the WSL environment.
