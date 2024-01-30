@@ -78,7 +78,7 @@ services:
 
   qanything_local:
     container_name: qanything-container-local
-    image: wen:1.1
+    image: wen:1.2
     # runtime: nvidia
     deploy:
       resources:
