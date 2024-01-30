@@ -113,8 +113,8 @@ echo "The triton server will start on $gpuid1 GPU"
 CUDA_VISIBLE_DEVICES=$gpuid1 nohup /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_embed --http-port=9000 --grpc-port=9001 --metrics-port=9002 --log-verbose=1 > /model_repos/QAEnsemble_embed/QAEnsemble_embed.log 2>&1 &
 CUDA_VISIBLE_DEVICES=$gpuid1 nohup /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_rerank --http-port=8000 --grpc-port=8001 --metrics-port=8002 --log-verbose=1 > /model_repos/QAEnsemble_rerank/QAEnsemble_rerank.log 2>&1 &
 
-echo "RERANK_PORT=8001" >> /workspace/qanything_local/.env
-echo "EMBED_PORT=9001" >> /workspace/qanything_local/.env
+# echo "RERANK_PORT=8001" >> /workspace/qanything_local/.env
+# echo "EMBED_PORT=9001" >> /workspace/qanything_local/.env
 
 # 默认ocr_use_gpu为True
 OCR_USE_GPU="True"
