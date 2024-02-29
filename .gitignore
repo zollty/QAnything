@@ -1,7 +1,7 @@
 .venv
 .vscode
 .idea
-# .env
+.env
 # user.config
 venv
 __pycache__
