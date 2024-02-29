@@ -56,7 +56,7 @@ const addKb = async () => {
   width: 52px;
   height: 32px;
   border-radius: 4px;
-  background: #5a47e5;
+  background: #4a6cf4;
 }
 .add-button {
   font-size: 14px;

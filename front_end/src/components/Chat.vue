@@ -531,7 +531,7 @@ scrollBottom();
         cursor: pointer;
         align-items: center;
         margin-right: auto;
-        color: #5a47e5;
+        color: #4a6cf4;
         .reload-text {
           height: 22px;
           line-height: 22px;
@@ -604,8 +604,8 @@ scrollBottom();
       color: #666666;
 
       &:hover {
-        border: 1px solid #5a47e5;
-        color: #5a47e5;
+        border: 1px solid #4a6cf4;
+        color: #4a6cf4;
       }
 
       svg {
@@ -619,13 +619,13 @@ scrollBottom();
       height: 36px;
       border-radius: 8px;
       color: #fff;
-      background: #5a47e5;
+      background: #4a6cf4;
 
       :deep(.ant-btn-primary) {
-        background-color: #5a47e5 !important;
+        background-color: #4a6cf4 !important;
       }
       :deep(.ant-btn-primary:disabled) {
-        background-color: #5a47e5 !important;
+        background-color: #4a6cf4 !important;
         color: #fff !important;
         border-color: transparent !important;
       }
@@ -644,7 +644,7 @@ scrollBottom();
       &:hover,
       &:focus,
       &:active {
-        border-color: #5a47e5 !important;
+        border-color: #4a6cf4 !important;
         box-shadow: none !important;
       }
     }

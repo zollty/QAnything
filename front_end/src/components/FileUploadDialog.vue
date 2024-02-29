@@ -379,7 +379,7 @@ onBeforeUnmount(() => {
     }
 
     .blue {
-      color: #5a47e5;
+      color: #4a6cf4;
       cursor: pointer;
     }
   }

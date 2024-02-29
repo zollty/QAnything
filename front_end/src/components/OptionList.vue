@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
     align-items: center;
     justify-content: center;
     height: 40px;
-    background: #5a47e5;
+    background: #4a6cf4;
     border-radius: 6px;
     padding: 8px 20px;
     img {
@@ -253,7 +253,7 @@ onBeforeUnmount(() => {
     height: 40px;
     padding: 8px 20px;
     border-radius: 4px;
-    background: #5a47e5;
+    background: #4a6cf4;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -266,11 +266,11 @@ onBeforeUnmount(() => {
     padding: 8px 20px;
     border-radius: 4px;
     background: #ffffff;
-    border: 1px solid #5a47e5;
+    border: 1px solid #4a6cf4;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-    color: #5a47e5;
+    color: #4a6cf4;
   }
 }
 

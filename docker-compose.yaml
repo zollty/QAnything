@@ -95,6 +95,7 @@ services:
       - ${DOCKER_VOLUME_DIRECTORY:-.}/:/workspace/qanything_local/
       - /disk1/models/qanything/model:/workspace/qanything_local/models
       - ${DOCKER_VOLUME_DIRECTORY:-.}/assets/custom_models:/model_repos/CustomLLM
+      - /disk1/apps:/ai/apps
     ports:
       - '5052:5052'
       - '8777:8777'

@@ -93,7 +93,7 @@ const handleOk = async () => {
     }
 
     .ant-btn-primary {
-      background: #5a47e5 !important;
+      background: #4a6cf4 !important;
       color: #ffffff;
     }
   }
