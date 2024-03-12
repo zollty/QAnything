@@ -80,7 +80,7 @@ print("rerank_port:", rerank_port)
 print("embed_port:", embed_port)
 
 
-LOCAL_LLM_SERVICE_URL = f"localhost:{llm_api_serve_port}"
+LOCAL_LLM_SERVICE_URL = f"192.168.33.104:{llm_api_serve_port}"
 LOCAL_LLM_MODEL_NAME = llm_api_serve_model
 LOCAL_LLM_MAX_LENGTH = 4096
 
