@@ -62,6 +62,7 @@ echo "LLM_API_SERVE_MODEL=$LLM_API_SERVE_MODEL" >> /workspace/qanything_local/.e
 #     echo "RERANK_PORT=10001" >> /workspace/qanything_local/.env
 #     echo "EMBED_PORT=10001" >> /workspace/qanything_local/.env
 # else
+
 gpuid2 = 4
 echo "The triton server will start on $gpuid1 and $gpuid2 GPUs"
 
