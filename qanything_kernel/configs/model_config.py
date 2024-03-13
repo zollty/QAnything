@@ -46,6 +46,7 @@ LLM_HISTORY_LEN = 1
 
 # 知识库检索时返回的匹配内容条数
 VECTOR_SEARCH_TOP_K = 100
+LOCAL_VECTOR_SEARCH_TOP_K = 100
 
 # embedding检索的相似度阈值，归一化后的L2距离，设置越大，召回越多，设置越小，召回越少
 VECTOR_SEARCH_SCORE_THRESHOLD = 1.1

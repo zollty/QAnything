@@ -22,6 +22,7 @@ from transformers import AutoTokenizer
 from tritonclient.utils import InferenceServerException
 from typing import List, Tuple, Dict, Optional, Any
 from urllib.parse import unquote
+from qanything_kernel.configs.model_config import LOCAL_VECTOR_SEARCH_TOP_K
 
 WORKER_VERSION = "llm_v1.0.0_231221_fc212a"
 
@@ -118,7 +119,7 @@ def generator_llm(params: OrderedDict) -> str:
         temperature = float(params.get("temperature", 0.6))
         repetition_penalty = float(params.get("repetition_penalty", 1.2))
         top_p = float(params.get("top_p", 1.0))
-        top_k = int(params.get("top_k", 4))
+        top_k = int(params.get("top_k", LOCAL_VECTOR_SEARCH_TOP_K))
         random_seed_ = int(params.get("random_seed", -1))
         if random_seed_ == -1:
             random_seed_ = 231221

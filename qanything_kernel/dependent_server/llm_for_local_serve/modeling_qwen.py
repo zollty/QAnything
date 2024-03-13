@@ -16,6 +16,7 @@ from tritonclient.utils import np_to_triton_dtype
 from typing import List, Tuple, Optional
 from collections import OrderedDict
 from transformers import AutoTokenizer
+from qanything_kernel.configs.model_config import LOCAL_VECTOR_SEARCH_TOP_K
 
 sys.path.append("/")
 from template import get_template_and_fix_tokenizer
@@ -149,7 +150,7 @@ class QwenTritonModel(object):
 
         return tuple([query, prompt])
 
-    def chat_stream(self, query: List[int], result_queue: queue.Queue, max_new_tokens: int=300, top_k: int=4, top_p: float=1.0, temperature: float=0.6, repetition_penalty: float=1.2, random_seed_: int=0, request_id: str="231221") -> None:
+    def chat_stream(self, query: List[int], result_queue: queue.Queue, max_new_tokens: int=300, top_k: int=LOCAL_VECTOR_SEARCH_TOP_K, top_p: float=1.0, temperature: float=0.6, repetition_penalty: float=1.2, random_seed_: int=0, request_id: str="231221") -> None:
 
         tid = threading.get_native_id()
         request_id = "{}_{}".format(request_id, tid)

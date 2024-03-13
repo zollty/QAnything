@@ -8,6 +8,7 @@ import requests
 from requests.exceptions import RequestException
 from collections import OrderedDict
 import tiktoken
+from qanything_kernel.configs.model_config import LOCAL_VECTOR_SEARCH_TOP_K
 from qanything_kernel.utils.custom_log import debug_logger, qa_logger
 import os
 from dotenv import load_dotenv
@@ -23,7 +24,7 @@ class ZiyueLLM(BaseAnswer, LLM, ABC):
     truncate_len: int = 50
     temperature: float = 0.6
     top_p: float = 1.0
-    top_k: int = 4
+    top_k: int = LOCAL_VECTOR_SEARCH_TOP_K
     repetition_penalty: float = 1.2
     check_in: int = 0
     url: str = "http://0.0.0.0:36001/worker_generate_stream"
