@@ -333,24 +333,20 @@ async def local_doc_chat(req: request):
     debug_logger.info("user_id: %s", user_id)
 
     not_exist_kb_ids = local_doc_qa.milvus_summary.check_kb_exist(user_id, kb_ids)
-    debug_logger.info("not_exist_kb_ids-----------: %s", not_exist_kb_ids)
     if not_exist_kb_ids:
         return sanic_json({"code": 2003, "msg": "fail, knowledge Base {} not found".format(not_exist_kb_ids)})
 
     file_infos = []
-    debug_logger.info("start match_milvus_kb-----------")
     milvus_kb = local_doc_qa.match_milvus_kb(user_id, kb_ids)
-    debug_logger.info("end match_milvus_kb-----------: %s", milvus_kb)
     for kb_id in kb_ids:
         file_infos.extend(local_doc_qa.milvus_summary.get_files(user_id, kb_id))
     valid_files = [fi for fi in file_infos if fi[2] == 'green']
-    debug_logger.info("end milvus_summary.get_files-----------")
     if len(valid_files) == 0:
         return sanic_json({"code": 200, "msg": "当前知识库为空，请上传文件或等待文件解析完毕", "question": question,
                            "response": "All knowledge bases {} are empty or haven't green file, please upload files".format(
                                kb_ids), "history": history, "source_documents": [{}]})
     else:
-        debug_logger.info("streaming: %s", streaming)
+        # debug_logger.info("streaming: %s", streaming)
         if streaming:
             debug_logger.info("start generate answer")
 
