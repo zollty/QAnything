@@ -197,8 +197,8 @@ echo "Please visit the front-end service at [http://$user_ip:5052/qanything/] to
 echo "请在[http://$user_ip:5052/qanything/]下访问前端服务来进行问答，如果前端报错，请在浏览器按F12以获取更多报错信息"
 
 # 保持容器运行
-while true; do
-  sleep 2
-done
+# while true; do
+#   sleep 2
+# done
 
 
