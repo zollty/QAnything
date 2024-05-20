@@ -69,8 +69,8 @@ gpuid2 = 4
 echo "The triton server will start on $gpuid1 and $gpuid2 GPUs"
 
 # CUDA_VISIBLE_DEVICES=$gpuid1 nohup /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_base --http-port=10000 --grpc-port=10001 --metrics-port=10002 --log-verbose=1 > /model_repos/QAEnsemble_base/QAEnsemble_base.log 2>&1 &
-CUDA_VISIBLE_DEVICES=$gpuid2 nohup /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_embed --http-port=9000 --grpc-port=9001 --metrics-port=9002 --log-verbose=1 > /model_repos/QAEnsemble_embed/QAEnsemble_embed.log 2>&1 &
-CUDA_VISIBLE_DEVICES=$gpuid2 nohup /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_rerank --http-port=8000 --grpc-port=8001 --metrics-port=8002 --log-verbose=1 > /model_repos/QAEnsemble_rerank/QAEnsemble_rerank.log 2>&1 &
+CUDA_VISIBLE_DEVICES=$gpuid2 nohup http_proxy="" https_proxy="" /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_embed --http-port=9000 --grpc-port=9001 --metrics-port=9002 --log-verbose=1 > /model_repos/QAEnsemble_embed/QAEnsemble_embed.log 2>&1 &
+CUDA_VISIBLE_DEVICES=$gpuid2 nohup http_proxy="" https_proxy="" /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_rerank --http-port=8000 --grpc-port=8001 --metrics-port=8002 --log-verbose=1 > /model_repos/QAEnsemble_rerank/QAEnsemble_rerank.log 2>&1 &
 
 echo "RERANK_PORT=8001" >> /workspace/qanything_local/.env
 echo "EMBED_PORT=9001" >> /workspace/qanything_local/.env
@@ -82,15 +82,15 @@ echo "EMBED_PORT=9001" >> /workspace/qanything_local/.env
 # echo "大模型中转服务已就绪! (1/8)"
 
 cd /workspace/qanything_local || exit
-nohup python3 -u qanything_kernel/dependent_server/rerank_for_local_serve/rerank_server.py > rerank.log 2>&1 &
+nohup http_proxy="" https_proxy="" python3 -u qanything_kernel/dependent_server/rerank_for_local_serve/rerank_server.py > rerank.log 2>&1 &
 echo "The rerank service is ready! (2/8)"
 echo "rerank服务已就绪! (2/8)"
 
-CUDA_VISIBLE_DEVICES=$gpuid2 nohup python3 -u qanything_kernel/dependent_server/ocr_serve/ocr_server.py > ocr.log 2>&1 &
+CUDA_VISIBLE_DEVICES=$gpuid2 nohup http_proxy="" https_proxy="" python3 -u qanything_kernel/dependent_server/ocr_serve/ocr_server.py > ocr.log 2>&1 &
 echo "The ocr service is ready! (3/8)"
 echo "OCR服务已就绪! (3/8)"
 
-nohup python3 -u qanything_kernel/qanything_server/sanic_api.py > api.log 2>&1 &
+nohup http_proxy="" https_proxy="" python3 -u qanything_kernel/qanything_server/sanic_api.py > api.log 2>&1 &
 echo "The qanything backend service is ready! (4/8)"
 echo "qanything后端服务已就绪! (4/8)"
 
