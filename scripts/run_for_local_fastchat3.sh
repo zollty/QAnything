@@ -16,8 +16,8 @@ if [ ! -L "/model_repos/QAEnsemble_rerank/rerank" ]; then
 fi
 
 # 设置默认值
-default_gpu_id1=4
-default_gpu_id2=4
+default_gpu_id1=0
+default_gpu_id2=0
 
 # 检查环境变量GPUID1是否存在，并读取其值或使用默认值
 if [ -z "${GPUID1}" ]; then
@@ -65,7 +65,7 @@ echo "GPU ID: $gpuid1, $gpuid2"
 #     echo "EMBED_PORT=10001" >> /workspace/qanything_local/.env
 # else
 
-gpuid2 = 4
+gpuid2=0
 echo "The triton server will start on $gpuid1 and $gpuid2 GPUs"
 
 # CUDA_VISIBLE_DEVICES=$gpuid1 nohup /opt/tritonserver/bin/tritonserver --model-store=/model_repos/QAEnsemble_base --http-port=10000 --grpc-port=10001 --metrics-port=10002 --log-verbose=1 > /model_repos/QAEnsemble_base/QAEnsemble_base.log 2>&1 &
