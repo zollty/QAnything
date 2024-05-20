@@ -34,7 +34,7 @@ else
 fi
 echo "GPU ID: $gpuid1, $gpuid2"
 
-# LLM_API_SERVE_CONV_TEMPLATE="qwen-7b-qanything"
+LLM_API_SERVE_CONV_TEMPLATE="qwen-7b-qanything"
 # LLM_API_SERVE_MODEL="Qwen-7B-Chat-8K" 
 # LLM_API_SERVE_CONV_TEMPLATE="minichat"
 # LLM_API_SERVE_MODEL="MiniMA-d0119-v100-6k" 
@@ -43,7 +43,7 @@ LLM_API_SERVE_MODEL="Qwen1.5-7B-Chat"
 echo "LLM_API_SERVE_PORT=20000" >> /workspace/qanything_local/.env
 echo "LLM_API_SERVE_MODEL=$LLM_API_SERVE_MODEL" >> /workspace/qanything_local/.env
 
-# echo "LLM_API_SERVE_CONV_TEMPLATE=$LLM_API_SERVE_CONV_TEMPLATE" >> /workspace/qanything_local/.env
+echo "LLM_API_SERVE_CONV_TEMPLATE=$LLM_API_SERVE_CONV_TEMPLATE" >> /workspace/qanything_local/.env
 
 # CUDA_VISIBLE_DEVICES=0 nohup python3 -m fastchat.serve.model_worker --host 0.0.0.0 --port 7801 --controller-address http://0.0.0.0:7800 --worker-address http://0.0.0.0:7801 --model-path /model_repos/QAEnsemble/Qwen-7B-Chat-8K --load-8bit --dtype bfloat16 --conv-template qwen-7b-qanything > fschat_model_worker_7801.log 2>&1 &
 # mkdir -p /workspace/qanything_local/qanything_logs/fastchat_logs && cd /workspace/qanything_local/qanything_logs/fastchat_logs
