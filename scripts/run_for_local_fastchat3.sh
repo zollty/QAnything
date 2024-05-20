@@ -39,9 +39,9 @@ echo "GPU ID: $gpuid1, $gpuid2"
 # LLM_API_SERVE_CONV_TEMPLATE="minichat"
 # LLM_API_SERVE_MODEL="MiniMA-d0119-v100-6k" 
 
-# LLM_API_SERVE_MODEL="Qwen1.5-7B-Chat"
-# echo "LLM_API_SERVE_PORT=20000" >> /workspace/qanything_local/.env
-# echo "LLM_API_SERVE_MODEL=$LLM_API_SERVE_MODEL" >> /workspace/qanything_local/.env
+LLM_API_SERVE_MODEL="Qwen1.5-7B-Chat"
+echo "LLM_API_SERVE_PORT=20000" >> /workspace/qanything_local/.env
+echo "LLM_API_SERVE_MODEL=$LLM_API_SERVE_MODEL" >> /workspace/qanything_local/.env
 
 # echo "LLM_API_SERVE_CONV_TEMPLATE=$LLM_API_SERVE_CONV_TEMPLATE" >> /workspace/qanything_local/.env
 
